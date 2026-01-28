@@ -22,14 +22,15 @@ def modbus_loop():
     device = objects.get_child([f"{idx}:PLC1"])
 
     # print for browser name
-    #for child in device.get_children():
-    #    bn = child.get_browse_name()
-    #    print(bn.Name, " | NodeId:", child.nodeid)
+    list = []
+    for child in device.get_children():
+        bn = child.get_browse_name()
+        list.append(bn.Name)
+    #   print(bn.Name, " | NodeId:", child.nodeid)
     
-    
-    temp = device.get_child([f"{idx}:Temperature"])
-    presure = device.get_child([f"{idx}:Pressure"])
-    motor_status = device.get_child([f"{idx}:MotorStatus"])
+    temp = device.get_child([f"{idx}:{list[0]}"]) # format get child {2}:Temprature
+    presure = device.get_child([f"{idx}:{list[1]}"]) # format get child {2}:Pressure
+    motor_status = device.get_child([f"{idx}:{list[2]}"]) # format get child {3}:Pressure
 
     while True: # melakukan process modbus secara realtime
         socketio.sleep(2)

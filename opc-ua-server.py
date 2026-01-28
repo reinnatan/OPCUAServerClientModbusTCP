@@ -61,8 +61,7 @@ try:
             temperature.set_value(temp)
             pressure.set_value(pres)
             motor.set_value(motor_status)
-
-            print(f"Temp={temp} Pressure={pres} Motor={motor_status}")
+            #print(f"Temp={temp} Pressure={pres} Motor={motor_status}")
         else:
             print("⚠️ Modbus read error")
 

@@ -8,3 +8,11 @@
     ```python3 opc-ua-server.py```
 - Run client
     ```python3 opc-ua-client.py```
+
+# Screenshoots
+- Read value coils
+    <img src="screenshoots/Coils_Setup_1.png"/>
+- Read value register 1
+     <img src="screenshoots/Register_1_setup.png"/>
+- Read value register 2
+     <img src="screenshoots/Register_2_setup.png"/>

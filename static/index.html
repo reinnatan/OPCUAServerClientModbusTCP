@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Python Dashboard Read Modbus</title>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+  <h2>Modbus - OPCUA Dashboard</h2>
+
+  <strong>Sensor Value</strong>
+  <p>Sensor 1: <span id="s1">-</span></p>
+  <p>Sensor 2: <span id="s2">-</span></p>
+
+  <strong>Machine Status</strong>
+  <p>Machine 1: <span id="c1">-</span></p>
+
+<script>
+  const socket = io();
+
+    socket.on("connection", () => {
+        console.log("connection is called");
+    });
+  
+
+  socket.on("modbus_data", function(data) {
+    document.getElementById("s1").innerText = data.temprature;
+    document.getElementById("s2").innerText = data.pressure;
+  });
+
+  socket.on("coil_data", function(data) {
+    if(data.motor){
+        document.getElementById("c1").innerText = "ON";
+    }else{
+        document.getElementById("c1").innerText = "OFF";
+    }
+
+  });
+</script>
+</body>
+</html>

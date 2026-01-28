@@ -10,7 +10,9 @@
     ```python3 opc-ua-client.py```
 
 # Screenshoots
-- Read value coils
+- Read value coils 0
+    <img src="screenshoots/Coils_Setup_0.png.png"/>
+- Read value coils 1
     <img src="screenshoots/Coils_Setup_1.png"/>
 - Read value register 1
      <img src="screenshoots/Register_1_setup.png"/>
